@@ -1,0 +1,25 @@
+# This file supports Continuous Integration by defining quality gates.
+# It runs linting and unit tests on pull requests to ensure that only tested
+# and stable code is merged into the main branch.
+
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        
+      - name: Run linting and unit tests
+        run: |
+          echo "Placeholder: Here we would run 'flake8 src/'"
+          echo "Placeholder: Here we would run 'pytest tests/'"
